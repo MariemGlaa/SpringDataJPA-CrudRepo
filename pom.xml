@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>tn.esprit.rh</groupId>
 	<artifactId>achat</artifactId>
-	<version>1.0</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>achat</name>
 	<description>Projet pour le module DevOps</description>
 	<properties>
@@ -77,5 +77,20 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	<distributionManagement>
+    <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <url>http://192.168.1.150:8081/repository/maven-snapchots/</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+      <servers>
+     	<server>
+       		<id>ossrh</id>
+       		<username>admin</username>
+       		<password>root</password>
+     	</server>
+   </servers>
+</settings>
