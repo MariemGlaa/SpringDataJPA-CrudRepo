@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>tn.esprit.rh</groupId>
 	<artifactId>achat</artifactId>
-	<version>1.0</version>
+	<version>1.0.0</version>
 	<name>achat</name>
 	<description>Projet pour le module DevOps</description>
 	<properties>
@@ -58,6 +58,11 @@
 
 	<build>
 		<plugins>
+		        <plugin>
+                             <groupId>org.apache.maven.plugins</groupId>
+                             <artifactId>maven-resources-plugin</artifactId>
+                             <version>3.1.0</version>
+                         </plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -72,5 +77,20 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	<distributionManagement>
+    <repository>
+      <id>nexus-releases</id>
+      <url>http://localhost:8081/repository/maven-releases/</url>
+    </repository>
+  </distributionManagement>
 </project>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+      <servers>
+     	<server>
+       		<id>ossrh</id>
+       		<username>admin</username>
+       		<password>root</password>
+     	</server>
+   </servers>
+</settings>
