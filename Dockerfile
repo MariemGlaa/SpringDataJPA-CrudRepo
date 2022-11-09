@@ -1,4 +1,5 @@
-FROM openjdk:8-jdk-alpine
-EXPOSE 8081
-ADD target/achat-1.0.war achat-1.0.war
-ENTRYPOINT ["java","-jar","/achat-1.0.war"]
+FROM adoptopenjdk/openjdk11:alpine-jre
+RUN apk update
+RUN apk add curl 
+RUN curl -u admin:root -o achat-1.0.jar "http://192.168.59.4:8081/repository/maven-releases/tn/esprit/rh/achat/1.0/achat-1.0.jar" -L
+ENTRYPOINT ["java", "-jar", "achat-1.0.jar"]
