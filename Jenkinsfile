@@ -9,7 +9,7 @@ pipeline {
         stage('GIT'){            
             steps {                 
                 echo 'getting project from Github branch'                 
-                git branch: 'main',  
+                git branch: 'mariemglaa',  
                 url: 'https://github.com/MariemGlaa/SpringDataJPA-CrudRepo.git'
             }
         }         
