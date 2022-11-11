@@ -21,7 +21,7 @@ import java.util.List;
     @Autowired
     IProduitService produitService;
 
-   /* @Test
+    @Test
     @Order(1)
      void retrieveAllProduitTest() throws ParseException {
         List<Produit> produitList= produitService.retrieveAllProduits();
@@ -60,5 +60,5 @@ import java.util.List;
     public void deleteProduitTest(){
         produitService.deleteProduit(1L);
         Assertions.assertNull(produitService.retrieveProduit(1L));
-    }*/
+    }
 }
