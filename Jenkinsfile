@@ -9,7 +9,7 @@ pipeline {
         stage('GIT'){            
             steps {                 
                 echo 'getting project from Github branch'                 
-                git branch: 'mariemglaa',  
+                git branch: 'MariemGlaaa',  
                 url: 'https://github.com/MariemGlaa/SpringDataJPA-CrudRepo.git'
             }
         }         
@@ -19,18 +19,19 @@ pipeline {
                 sh 'mvn package -DskipTests'
             }      
         }
+         stage('TEST') {
+            steps {
+                echo "Test project"
+                sh 'mvn test'
+              }
+        }
         stage ('SONARQUBE'){
             steps{
                 echo 'Testing code with sonar'
                 sh 'mvn sonar:sonar -Dsonar.sources=src/main/java -Dsonar.java.binaries=target/classes -Dsonar.css.node=.  -Dsonar.host.url=http://localhost:9000  -Dsonar.projectKey=tn.esprit.rh:achat  -Dsonar.login=admin  -Dsonar.password=root'
             }
         }
-        stage('TEST') {
-            steps {
-                 echo "Test project"
-                bat 'mvn test'
-              }
-        }
+       
         stage('NEXUS') {
             steps {
                  sh 'mvn deploy -DskipTests'
@@ -54,7 +55,7 @@ pipeline {
         }
          stage('CLEAN') {
             steps { 
-                bat "docker rmi $registry:$BUILD_NUMBER" 
+                sh "docker rmi $registry:$BUILD_NUMBER" 
             }
         }
     }
