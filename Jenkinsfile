@@ -19,6 +19,11 @@ pipeline {
                 sh 'mvn package -DskipTests'
             }      
         }
+        stage ('docker compose'){
+          steps{ 
+            sh ' docker-compose up -d'
+         
+          }
          stage('TEST') {
             steps {
                 echo "Test project"
