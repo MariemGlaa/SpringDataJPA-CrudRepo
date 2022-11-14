@@ -104,8 +104,9 @@
 	</build>
 	<distributionManagement>
     <repository>
-      <id>nexus-releases</id>
-      <url>http://localhost:8081/repository/maven-releases/</url>
+      <id>deploymentRepo</id>
+      <name>deploymentRepo</name>
+      <url>192.168.1.5:8081/repository/maven-releases/</url>
     </repository>
   </distributionManagement>
 </project>
