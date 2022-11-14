@@ -19,12 +19,7 @@ pipeline {
                 sh 'mvn package -DskipTests'
             }      
         }
-       stage('TEST') {
-            steps {
-                echo "Test project"
-                sh 'mvn test'
-              }
-        }
+    
          
         stage ('SONARQUBE'){
             steps{
@@ -58,6 +53,12 @@ pipeline {
             steps { 
                 sh "docker rmi $registry:$BUILD_NUMBER" 
             }
+        }
+        stage ('docker compose'){
+          steps{ 
+            sh ' docker-compose up'
+              
+          }
         }
     }
 }
