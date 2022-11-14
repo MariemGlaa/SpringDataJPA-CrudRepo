@@ -1,23 +1,5 @@
 version: '3'
 services:
- sonarqube:
-  image: sonarqube:8.9.7-community
-  hostname: sonarqube
-  container_name : sonarqubes
-  volumes:
-      - sonarqube_data:/opt/sonarqube/data
-      - sonarqube_extensions:/opt/sonarqube/extensions
-      - sonarqube_logs:/opt/sonarqube/logs
-  ports:
-  - "9000:9000"
- nexus:
-  image: sonatype/nexus3
-  hostname: nexus
-  container_name: nexus3
-  volumes:
-      - nexus_data:/sonatype-work
-  ports:
-      - "8081:8081"
  mysqldb:
   container_name: achat-projets
   image: mysql:8
@@ -42,11 +24,4 @@ services:
       - spring.datasource.url=jdbc:mysql://mysqldb:3306/achatdb?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
   depends_on:
     - mysqldb
-    
-volumes:
-  sonarqube_data:
-  sonarqube_extensions:
-  sonarqube_logs:
-  nexus_data:
-  db:
 
