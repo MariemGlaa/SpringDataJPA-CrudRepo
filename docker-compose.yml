@@ -3,7 +3,7 @@ services:
  sonarqube:
   image: sonarqube:8.9.7-community
   hostname: sonarqube
-  container_name : sonarqube
+  container_name : sonarqubes
   volumes:
       - sonarqube_data:/opt/sonarqube/data
       - sonarqube_extensions:/opt/sonarqube/extensions
@@ -13,13 +13,13 @@ services:
  nexus:
   image: sonatype/nexus3
   hostname: nexus
-  container_name: nexus
+  container_name: nexus3
   volumes:
       - nexus_data:/sonatype-work
   ports:
       - "8081:8081"
  mysqldb:
-  container_name: achat-projet
+  container_name: achat-projets
   image: mysql:8
   restart: unless-stopped
   environment:
@@ -34,7 +34,7 @@ services:
 
  spring_app:
   image: mariemglaa/repo:372
-  container_name: cnt_achat
+  container_name: cntr_achat
   restart: on-failure
   ports:
       - 8089:8089
