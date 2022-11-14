@@ -1,0 +1,23 @@
+version: '2'
+volumes:
+ dbdata:
+
+services:
+ mysql:
+  image: mysql:8
+  container_name: mysqldb
+  volumes:
+    - dbdata:/var/lib/mysql
+  restart: on-failure
+  environment:
+    - MYSQL_ROOT_PASSWORD=root
+    - MYSQL_DATABASE=achatdb
+    - MYSQL_PASSWORD=root
+ spring_app:
+   image: seifeddin/achatproject
+   container_name: achatbackend
+   restart: on-failure  
+   environment:
+    - spring.datasource.url=jdbc:mysql://mysqldb:3306/achatdb?allowPublicKeyRetrieval=true&useSSL=false
+   ports:
+    - 8089:8089
