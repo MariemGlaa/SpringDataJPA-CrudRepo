@@ -19,7 +19,12 @@ pipeline {
                 sh 'mvn package -DskipTests'
             }      
         }
-       
+       stage('TEST') {
+            steps {
+                echo "Test project"
+                sh 'mvn test'
+              }
+        }
          
         stage ('SONARQUBE'){
             steps{
