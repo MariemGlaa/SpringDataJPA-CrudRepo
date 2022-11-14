@@ -20,12 +20,7 @@ pipeline {
             }      
         }
        
-         stage('TEST') {
-            steps {
-                echo "Test project"
-                sh 'mvn test'
-              }
-        }
+         
         stage ('SONARQUBE'){
             steps{
                 echo 'Testing code with sonar'
