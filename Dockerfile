@@ -1,4 +1,5 @@
-FROM openjdk:11-jre-slim
-EXPOSE 8089
-ADD target/achat-0.1.0.jar achat.jar
-ENTRYPOINT ["java","-jar","/achat.jar"]
+FROM openjdk:8-jdk-alpine
+EXPOSE 8081
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
