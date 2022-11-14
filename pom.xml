@@ -59,7 +59,14 @@
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
 
+
 	</dependencies>
+	<distributionManagement>
+		<repository>
+			<id>nexus-releases</id>
+			<url>http://192.168.1.59:8081/repository/maven-releases/</url>
+		</repository>
+	</distributionManagement>
 
 	<build>
 		<plugins>
@@ -80,11 +87,6 @@
 			</plugin>
 		</plugins>
 	</build>
-	<distributionManagement>
-    <repository>
-      <id>nexus-releases</id>
-      <url>http://192.168.1.59:8081/repository/maven-releases/</url>
-    </repository>
-  </distributionManagement>
+
 </project>
 
