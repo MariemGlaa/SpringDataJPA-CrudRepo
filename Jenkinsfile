@@ -70,12 +70,12 @@ pipeline {
 }
 post {
                 success {
-                     mail to: "eya.kaabachi@esprit.tn",
+                     mail to: "mariem.glaa@esprit.tn",
                      subject: "success",
                      body: "success on job ${env.JOB_NAME}, Build Number: ${env.BUILD_NUMBER}, Build URL: ${env.BUILD_URL}"
                 }
         failure {
-                    mail to: "eya.kaabachi@esprit.tn",
+                    mail to: "mariem.glaa@esprit.tnn",
                      subject: "Failure",
                      body: "Failure on job ${env.JOB_NAME}, Build Number: ${env.BUILD_NUMBER}, Build URL: ${env.BUILD_URL} "     
                 }
