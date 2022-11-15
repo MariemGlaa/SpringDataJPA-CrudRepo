@@ -17,7 +17,7 @@ public class FournisseurServiceTest {
     @Autowired
     private IFournisseurService fs;
     
-    @Test
+    /*@Test
     @Order(1)
     public void testretrieveAllFournisseur() {
 
@@ -55,7 +55,7 @@ public class FournisseurServiceTest {
 					.categorieFournisseur(CategorieFournisseur.CONVENTIONNE).build();
 
         assertNotNull(fs.updateFournisseur(fournisseur));
-    }
+    }*/
     
     
 }
