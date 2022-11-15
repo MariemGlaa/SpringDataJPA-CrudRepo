@@ -42,7 +42,7 @@ public class FournisseurServiceTest {
     @Test
     @Order(3)
     public void testdeleteFournisseur() {
-        fs.deleteFournisseur(1L)
+        fs.deleteFournisseur(1L);
         assertNotNull(fs.retrieveFournisseur(1L));
     }
     @Test
