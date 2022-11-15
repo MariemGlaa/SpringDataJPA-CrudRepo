@@ -39,7 +39,27 @@ pipeline {
               }
         }
         
-        
+          stage('BUILD IMAGE') {
+                steps {
+                    script {
+                        dockerImage= docker.build registry + ":$BUILD_NUMBER" 
+                    }
+                }
+            }
+        stage('DEPLOYMENT') {
+                steps {
+                    script {
+                    docker.withRegistry( '', registryCredential) {
+                     dockerImage.push()
+                    }
+                }
+            }
+        }
+         stage('CLEAN') {
+            steps { 
+                bat "docker rmi $registry:$BUILD_NUMBER" 
+            }
+        }
         stage ('DOCKER COMPOSE'){
           steps{ 
             sh ' docker-compose up -d'
