@@ -19,7 +19,12 @@ pipeline {
                 sh 'mvn package -DskipTests'
             }      
         }
-    
+       stage('TEST') {
+            steps {
+                 echo "Test project"
+                bat 'mvn test'
+              }
+        }
          
         stage ('SONARQUBE'){
             steps{
@@ -35,9 +40,9 @@ pipeline {
         }
         
         
-        stage ('docker compose'){
+        stage ('DOCKER COMPOSE'){
           steps{ 
-            sh ' docker-compose up'
+            sh ' docker-compose up -d'
               
           }
         }
