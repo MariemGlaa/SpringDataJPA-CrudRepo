@@ -14,7 +14,7 @@ services:
     - MYSQL_DATABASE=achatdb
     - MYSQL_PASSWORD=root
  spring_app:
-   image: seifeddin/achatproject
+   image: skander7/achat
    container_name: achatbackend
    restart: on-failure  
    environment:
