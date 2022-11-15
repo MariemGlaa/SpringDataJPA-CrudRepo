@@ -15,7 +15,7 @@ services:
  #    - /home/mysql/data:/var/lib/mysql
 
  spring_app:
-  image: mariemglaa/repo:384
+  image: backend
   container_name: cntr_achat
   restart: on-failure
   ports:
