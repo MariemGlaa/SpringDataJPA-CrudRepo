@@ -34,11 +34,7 @@ pipeline {
               }
         }
         
-         stage('CLEAN') {
-            steps { 
-                sh "docker rmi $registry:$BUILD_NUMBER" 
-            }
-        }
+        
         stage ('docker compose'){
           steps{ 
             sh ' docker-compose up'
