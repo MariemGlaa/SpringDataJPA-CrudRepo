@@ -16,9 +16,20 @@ public class FournisseurServiceTest {
     
     @Autowired
     private IFournisseurService fs;
-
-    /*@Test
+    
+    @Test
     @Order(1)
+    public void testretrieveAllFournisseur() {
+
+        Fournisseur fournisseur = Fournisseur.builder()
+					.code("new")
+					.libelle("should persist")
+					.categorieFournisseur(CategorieFournisseur.CONVENTIONNE).build();
+
+        assertNotNull(fs.retrieveAllFournisseurs(fournisseur));
+    }
+    @Test
+    @Order(2)
     public void testaddFournisseur() {
 
         Fournisseur fournisseur = Fournisseur.builder()
@@ -27,5 +38,24 @@ public class FournisseurServiceTest {
 					.categorieFournisseur(CategorieFournisseur.CONVENTIONNE).build();
 
         assertNotNull(fs.addFournisseur(fournisseur));
-    }*/
+    }
+    @Test
+    @Order(3)
+    public void testdeleteFournisseur() {
+        fs.deleteFournisseur(1L)
+        assertNotNull(fs.retrieveFournisseur(1L));
+    }
+    @Test
+    @Order(4)
+    public void testupdateFournisseur() {
+
+        Fournisseur fournisseur = Fournisseur.builder()
+					.code("new")
+					.libelle("should persist")
+					.categorieFournisseur(CategorieFournisseur.CONVENTIONNE).build();
+
+        assertNotNull(fs.updateFournisseur(fournisseur));
+    }
+    
+    
 }
