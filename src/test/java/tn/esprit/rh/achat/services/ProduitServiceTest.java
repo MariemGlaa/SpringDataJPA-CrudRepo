@@ -12,7 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import tn.esprit.rh.achat.entities.CategorieFournisseur;
 import tn.esprit.rh.achat.entities.Produit;
 import org.junit.jupiter.api.extension.ExtendWith;
-
+import tn.esprit.rh.achat.repositories.ProduitRepository;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import tn.esprit.rh.achat.services.IProduitService;
 import java.text.ParseException;
