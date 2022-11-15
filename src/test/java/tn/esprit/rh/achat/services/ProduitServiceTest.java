@@ -27,6 +27,9 @@ public class ProduitServiceTest {
     
     @Autowired
     private IProduitService produitService;
+ 
+    @Autowired
+    ProduitRepository produitRepository;
 
     @Test
     @Order(1)
