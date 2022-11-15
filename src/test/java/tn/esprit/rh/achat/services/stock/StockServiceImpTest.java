@@ -1,4 +1,4 @@
-package tn.esprit.spring.service.stock;
+package tn.esprit.rh.achat.services.stock;
 
 import java.util.List;
 
