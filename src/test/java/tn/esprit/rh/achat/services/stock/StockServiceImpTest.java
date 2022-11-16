@@ -27,26 +27,7 @@ public class StockServiceImpTest {
 	}
 	
 	
-	@Test
-	@Order(2)
-	public void testRetrieveALLStocks() {
-		List<Stock> allStocks = stockService.retrieveAllStocks();
-		Assertions.assertEquals(0,allStocks.size());
-	}
 	
-	@Test
-	@Order(3)
-	public void testRetrieveStock() {
-		Stock stock =  stockService.retrieveStock(1L);
-		Assertions.assertEquals(1L,stock.getIdStock().longValue());
-	}
-	
-	@Test
-	@Order(4)
-	public void testDeleteStock() {
-		stockService.deleteStock(1L);
-		Assertions.assertNull(stockService.retrieveStock(1L));
-	}
 	
 	
 }
