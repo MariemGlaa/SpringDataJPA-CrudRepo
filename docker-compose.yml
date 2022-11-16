@@ -12,7 +12,7 @@ services:
       - MYSQL_DATABASE=tpachato
 
   spring_app:
-    image: rzemahmed/achat
+    image: ahmedrzem/achat
     container_name: achatspring
     restart: on-failure
     environment:
