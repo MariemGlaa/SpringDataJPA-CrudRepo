@@ -8,6 +8,8 @@ services:
   container_name: mysqldb
   volumes:
     - dbdata:/var/lib/mysql
+  ports:
+    - 3306:3306
   restart: on-failure
   environment:
     - MYSQL_ROOT_PASSWORD=root
