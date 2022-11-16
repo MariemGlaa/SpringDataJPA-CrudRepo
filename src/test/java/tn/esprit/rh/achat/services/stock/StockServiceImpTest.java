@@ -20,17 +20,18 @@ public class StockServiceImpTest {
 	
 	@Test
 	@Order(1)
-	public void testRetrieveALLStocks() {
-		List<Stock> allStocks = stockService.retrieveAllStocks();
-		Assertions.assertEquals(0,allStocks.size());
-	}
-	
-	@Test
-	@Order(2)
 	public void testAddStock() {
 		Stock s = new Stock("stock test",100,10);
 		Stock savedStock = stockService.addStock(s);
 		Assertions.assertEquals(s.getLibelleStock(),savedStock.getLibelleStock());
+	}
+	
+	
+	@Test
+	@Order(2)
+	public void testRetrieveALLStocks() {
+		List<Stock> allStocks = stockService.retrieveAllStocks();
+		Assertions.assertEquals(0,allStocks.size());
 	}
 	
 	@Test
