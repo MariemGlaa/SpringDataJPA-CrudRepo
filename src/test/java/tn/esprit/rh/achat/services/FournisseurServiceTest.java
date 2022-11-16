@@ -1,6 +1,8 @@
 package tn.esprit.rh.achat.services;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -16,16 +18,18 @@ public class FournisseurServiceTest {
     
     @Autowired
     private IFournisseurService fs;
+    
 
-    /*@Test
+    @Test
     @Order(1)
     public void testaddFournisseur() {
-
         Fournisseur fournisseur = Fournisseur.builder()
 					.code("new")
 					.libelle("should persist")
 					.categorieFournisseur(CategorieFournisseur.CONVENTIONNE).build();
-
         assertNotNull(fs.addFournisseur(fournisseur));
-    }*/
+
+    }
+    
+    
 }
