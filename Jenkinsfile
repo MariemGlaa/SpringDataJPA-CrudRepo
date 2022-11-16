@@ -75,7 +75,7 @@ post {
                      body: "success on job ${env.JOB_NAME}, Build Number: ${env.BUILD_NUMBER}, Build URL: ${env.BUILD_URL}"
                 }
         failure {
-                    mail to: "mariem.glaa@esprit.tnn",
+                    mail to: "mariem.glaa@esprit.tn",
                      subject: "Pipeline Failed",
                      body: "Failure on job ${env.JOB_NAME}, Build Number: ${env.BUILD_NUMBER}, Build URL: ${env.BUILD_URL} "     
                 }
