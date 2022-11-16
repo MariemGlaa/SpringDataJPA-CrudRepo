@@ -3,7 +3,7 @@ services:
   mysql-standalone:
     image: mysql:latest
     container_name: mysql-standalone
-    restart: unless-stopped
+    tty: true
     environment:
       - MYSQL_ROOT_PASSWORD=genadminpwd
       - MYSQL_DATABASE=achatdb
