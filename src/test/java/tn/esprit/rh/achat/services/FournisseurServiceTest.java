@@ -20,7 +20,7 @@ public class FournisseurServiceTest {
     private IFournisseurService fs;
     
 
-    @Test
+    /*@Test
     @Order(1)
     public void testaddFournisseur() {
         Fournisseur fournisseur = Fournisseur.builder()
@@ -29,7 +29,7 @@ public class FournisseurServiceTest {
 					.categorieFournisseur(CategorieFournisseur.CONVENTIONNE).build();
         assertNotNull(fs.addFournisseur(fournisseur));
 
-    }
+    }*/
     
     
 }
