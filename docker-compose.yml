@@ -1,7 +1,7 @@
 version: '3'
 services:
  mysqldb:
-  container_name: mysql
+  container_name: mysql_achat
   image: mysql
   restart: unless-stopped
   environment:
