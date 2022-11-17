@@ -11,13 +11,6 @@ pipeline {
                 echo 'getting project from Github branch'                 
                 git branch: 'MariemGlaaa',  
                 url: 'https://github.com/MariemGlaa/SpringDataJPA-CrudRepo.git'
-                sh "mvn -Dmaven.test.failure.ignore=true clean package"
-            }
-             post {
-                success {
-                    junit '*/target/surefire-reports/TEST-.xml'
-                    archiveArtifacts 'target/*.jar'
-                }
             }
         }         
         stage ('COMPILING'){          
