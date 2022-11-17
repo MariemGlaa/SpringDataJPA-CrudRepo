@@ -34,7 +34,7 @@ pipeline {
        stage('TEST') {
             steps {
                  echo "Test project"
-                sh 'mvn test -Dtest=tn.esprit.rh.achat.ProduitServiceTest'
+                sh 'mvn test -Dtest=tn.esprit.rh.achat.services.ProduitServiceTest'
               }
         }
          
