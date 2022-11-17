@@ -5,24 +5,13 @@ pipeline {
         dockerImage=''
     }
     agent any;  
-    tools {
-        // Install the Maven version configured as "M3" and add it to the path.
-        maven "M2_HOME"
-    }
+   
     stages {        
         stage('GIT'){            
             steps {                 
                 echo 'getting project from Github branch'                 
                 git branch: 'MariemGlaaa',  
                 url: 'https://github.com/MariemGlaa/SpringDataJPA-CrudRepo.git'
-              
-            }
-            post {
-               
-                success {
-                    
-                    archiveArtifacts 'target/*.jar'
-                }
             }
         }         
         stage ('COMPILING'){          
@@ -34,7 +23,7 @@ pipeline {
        stage('TEST') {
             steps {
                  echo "Test project"
-                sh 'mvn test -Dtest=tn.esprit.rh.achat.services.ProduitServiceTest'
+                sh 'mvn test'
               }
         }
          
