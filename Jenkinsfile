@@ -4,14 +4,18 @@ pipeline {
         registryCredential= 'dockerhub_id'
         dockerImage=''
     }
-    agent any;               
+    agent any;  
+    tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "M2_HOME"
+    }
     stages {        
         stage('GIT'){            
             steps {                 
                 echo 'getting project from Github branch'                 
                 git branch: 'MariemGlaaa',  
                 url: 'https://github.com/MariemGlaa/SpringDataJPA-CrudRepo.git'
-                sh "mvn -Dmaven.test.failure.ignore=false clean package"
+                sh "mvn -Dmaven.test.failure.ignore=true clean package"
             }
             post {
                 // If Maven was able to run the tests, even if some of the test
