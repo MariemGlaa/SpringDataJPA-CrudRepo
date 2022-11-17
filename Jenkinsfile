@@ -62,6 +62,7 @@ pipeline {
         }
         stage ('DOCKER COMPOSE'){
           steps{ 
+            sh 'docker kill mysql'
             sh ' docker-compose up -d'
               
           }
