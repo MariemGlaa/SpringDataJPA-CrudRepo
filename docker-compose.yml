@@ -12,8 +12,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=achatdb
-    volumes:
-      - db:/var/lib/mysql
+   
 
  spring_app:
   image: backend
@@ -35,3 +34,4 @@ services:
      - spring_app
 volumes:
   db:
+  mysql-data:
